@@ -1,0 +1,17 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{title}}
+{% endblock %}
+
+
+{% block body %}
+
+    {% if message %}
+        <h1>{{ message }}</h1>
+    {% else %}         
+        {{entry|safe}}
+        <a class="btn btn-outline-primary" href="{% url 'edit' title=title %}">Edit Page</a>
+    {% endif %}
+
+{% endblock %}
